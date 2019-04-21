@@ -4,7 +4,7 @@ const Guessed = props => {
   const { guessedwords } = props;
   let guessedWordsDisplay;
 
-  if (guessedwords) {
+  if (guessedwords.length) {
     guessedWordsDisplay = "tableau";
   } else {
     guessedWordsDisplay = "input stuff";
