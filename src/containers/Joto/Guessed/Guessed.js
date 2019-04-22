@@ -6,7 +6,13 @@ const Guessed = props => {
 
   if (guessedwords.length) {
     guessedWordsDisplay = (
-      <table dataTest="guessed-words">
+      <table dataTest="guessed-words" className="table table-sm">
+        <thead className="thead-light">
+          <tr>
+            <th>words</th>
+            <th>letters</th>
+          </tr>
+        </thead>
         {guessedwords.map((item, i) => (
           <tr dataTest="guessed-word" key={i}>
             <td>{item.guessed}</td>

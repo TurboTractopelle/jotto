@@ -14,9 +14,11 @@ describe("<Congrats />", () => {
     expect(wrapper.find("div.Congrats")).toBeTruthy();
   });
 
-  it("displays no text when props.success is false", () => {
+  it("displays Find the word! when props.success is false", () => {
     const wrapper = setup({ success: false });
-    expect(findByProp(wrapper, "component-congrats").text()).toBe("");
+    expect(findByProp(wrapper, "component-congrats").text()).toBe(
+      "Find the word!"
+    );
   });
 
   it("displays the congrats message when props.success is true", () => {
