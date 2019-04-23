@@ -1,19 +1,29 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import * as actions from "../../../store/actions/actions";
 
 class Input extends Component {
+  onSubmitHandler = word => e => {
+    e.preventDefault();
+    this.props.guessedWord(word);
+  };
+
   render() {
     let inputDisplay = !this.props.success ? (
-      <form className="form-inline" dataTest="form">
+      <form
+        className="form-inline"
+        data-test="form"
+        onSubmit={this.onSubmitHandler("train")}
+      >
         <input
-          dataTest="input"
+          data-test="input"
           className="mb-2 mx-sm-3"
           id="wordGuess"
           type="text"
           placeholder="input word"
         />
         <input
-          dataTest="button"
+          data-test="button"
           type="submit"
           value="go"
           className="btn btn-primary mb-2"
@@ -21,7 +31,7 @@ class Input extends Component {
       </form>
     ) : null;
 
-    return <div dataTest="component-input">{inputDisplay}</div>;
+    return <div data-test="component-input">{inputDisplay}</div>;
   }
 }
 
@@ -29,4 +39,13 @@ const mapStateToProps = state => {
   return { success: state.successreducer };
 };
 
-export default connect(mapStateToProps)(Input);
+const mapDispatchToProps = dispatch => {
+  return {
+    guessedWord: word => dispatch(actions.guessedWord(word))
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Input);

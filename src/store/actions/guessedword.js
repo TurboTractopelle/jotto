@@ -1,3 +1,5 @@
 export const guessedWord = guessedWord => {
-  return (dispatch, getState) => {};
+  return (dispatch, getState) => {
+    console.log(getState());
+  };
 };

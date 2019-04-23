@@ -3,11 +3,14 @@ import React from "react";
 const Congrats = props => {
   const { success } = props;
   const successDisplay = success ? (
-    <div className="Congrats alert alert-success" dataTest="component-congrats">
+    <div
+      className="Congrats alert alert-success"
+      data-test="component-congrats"
+    >
       <p>GG</p>
     </div>
   ) : (
-    <div className="Congrats" dataTest="component-congrats">
+    <div className="Congrats" data-test="component-congrats">
       Find the word!
     </div>
   );

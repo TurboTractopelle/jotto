@@ -6,19 +6,21 @@ const Guessed = props => {
 
   if (guessedwords.length) {
     guessedWordsDisplay = (
-      <table dataTest="guessed-words" className="table table-sm">
+      <table data-test="guessed-words" className="table table-sm">
         <thead className="thead-light">
           <tr>
             <th>words</th>
             <th>letters</th>
           </tr>
         </thead>
-        {guessedwords.map((item, i) => (
-          <tr dataTest="guessed-word" key={i}>
-            <td>{item.guessed}</td>
-            <td>{item.letters}</td>
-          </tr>
-        ))}
+        <tbody>
+          {guessedwords.map((item, i) => (
+            <tr data-test="guessed-word" key={i}>
+              <td>{item.guessed}</td>
+              <td>{item.letters}</td>
+            </tr>
+          ))}
+        </tbody>
       </table>
     );
   } else {
@@ -26,7 +28,7 @@ const Guessed = props => {
   }
 
   return (
-    <div className="Guessed" dataTest="component-guessed">
+    <div className="Guessed" data-test="component-guessed">
       {guessedWordsDisplay}
     </div>
   );

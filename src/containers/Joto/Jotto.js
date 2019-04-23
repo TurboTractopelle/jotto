@@ -6,7 +6,7 @@ import Input from "./Input/Input";
 class Jotto extends Component {
   render() {
     return (
-      <div className="Jotto" dataTest="component-jotto">
+      <div className="Jotto" data-test="component-jotto">
         <h1>Jotto</h1>
         <Input />
         <Congrats success={false} />

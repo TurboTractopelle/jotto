@@ -4,7 +4,7 @@ import { shallow } from "enzyme";
 
 describe("<Jotto />", () => {
   const setup = props => shallow(<Jotto {...props} />);
-  const findByProp = (wrapper, prop) => wrapper.find(`[dataTest="${prop}"]`);
+  const findByProp = (wrapper, prop) => wrapper.find(`[data-test="${prop}"]`);
 
   it("loads <Jotto />", () => {
     const wrapper = setup();

@@ -3,7 +3,7 @@ import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 
 export const findByProp = (wrapper, prop) =>
-  wrapper.find(`[dataTest="${prop}"]`);
+  wrapper.find(`[data-test="${prop}"]`);
 
 // storeFactory
 export const storeFactory = initialState => {
