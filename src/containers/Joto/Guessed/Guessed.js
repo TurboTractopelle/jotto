@@ -16,8 +16,8 @@ const Guessed = props => {
         <tbody>
           {guessedwords.map((item, i) => (
             <tr data-test="guessed-word" key={i}>
-              <td>{item.guessed}</td>
-              <td>{item.letters}</td>
+              <td>{item.guessedWord}</td>
+              <td>{item.letterMatchCount}</td>
             </tr>
           ))}
         </tbody>

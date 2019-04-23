@@ -3,9 +3,19 @@ import { connect } from "react-redux";
 import * as actions from "../../../store/actions/actions";
 
 class Input extends Component {
+  state = {
+    value: ""
+  };
+
   onSubmitHandler = word => e => {
     e.preventDefault();
-    this.props.guessedWord(word);
+    this.props.guessedWord(this.state.value);
+    this.setState({ value: "" });
+  };
+
+  onChangeInputHandler = () => e => {
+    const value = e.target.value;
+    this.setState({ value });
   };
 
   render() {
@@ -21,6 +31,8 @@ class Input extends Component {
           id="wordGuess"
           type="text"
           placeholder="input word"
+          value={this.state.value}
+          onChange={this.onChangeInputHandler()}
         />
         <input
           data-test="button"
