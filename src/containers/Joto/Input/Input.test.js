@@ -35,4 +35,19 @@ describe("render", () => {
       expect(findByProp(wrapper, "form").length).toBe(0);
     });
   });
+
+  describe("gets redux props", () => {
+    it("gets success props", () => {
+      const successreducer = true;
+      const wrapper = setup({ successreducer });
+      const successProps = wrapper.instance().props.success;
+      expect(successProps).toBe(successreducer);
+    });
+
+    it("gets an action creator: guessedWord", () => {
+      const wrapper = setup({});
+      const passedMethod = wrapper.instance().props.guessedWord;
+      expect(passedMethod).toBeInstanceOf(Function);
+    });
+  });
 });

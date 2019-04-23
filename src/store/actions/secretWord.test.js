@@ -1,10 +1,8 @@
 import moxios from "moxios";
-import secretWord, { getSecretWord } from "./secretWord";
+import { getSecretWord } from "./secretWord";
 import { storeFactory } from "../../test/testUtils";
 
 describe("secretWord", () => {
-  let wrapper;
-
   beforeEach(() => {
     moxios.install();
   });
