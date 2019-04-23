@@ -14,6 +14,6 @@ const setSecretWord = actionCreator(actionTypes.SET_SECRET_WORD, "word");
 export const getSecretWord = () => {
   return dispatch =>
     axios.get("https://jsonplaceholder.typicode.com/posts/1").then(res => {
-      dispatch(setSecretWord(res.data));
+      dispatch(setSecretWord("party"));
     });
 };

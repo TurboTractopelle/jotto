@@ -3,8 +3,13 @@ import Congrats from "./Congrats/Congrats";
 import Guessed from "./Guessed/Guessed";
 import Input from "./Input/Input";
 import { connect } from "react-redux";
+import * as actions from "../../store/actions/actions";
 
-class Jotto extends Component {
+export class JottoUnconnected extends Component {
+  componentDidMount() {
+    this.props.setSecretWord();
+  }
+
   render() {
     return (
       <div className="Jotto" data-test="component-jotto">
@@ -24,4 +29,11 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(Jotto);
+const mapDispatchToProps = dispatch => {
+  return { setSecretWord: () => dispatch(actions.setSecretWord()) };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(JottoUnconnected);
