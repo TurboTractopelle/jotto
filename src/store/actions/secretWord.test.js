@@ -23,7 +23,7 @@ describe("secretWord", () => {
     });
     return store.dispatch(getSecretWord()).then(() => {
       const newState = store.getState();
-      expect(newState.secretWord).toBe(secretWord);
+      expect(newState.secretWordReducer).toBe(secretWord);
     });
   });
 });

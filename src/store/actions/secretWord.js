@@ -1,5 +1,5 @@
 import axios from "axios";
-import * as actions from "../actions/actions";
+import * as actionTypes from "../actions/actionTypes";
 
 const actionCreator = (type, ...autreArgs) => {
   return (...args) => {
@@ -9,8 +9,11 @@ const actionCreator = (type, ...autreArgs) => {
   };
 };
 
+const setSecretWord = actionCreator(actionTypes.SET_SECRET_WORD, "word");
+
 export const getSecretWord = () => {
-  return dispatch => {
-    axios.get("https://jsonplaceholder.typicode.com/posts/1");
-  };
+  return dispatch =>
+    axios.get("https://jsonplaceholder.typicode.com/posts/1").then(res => {
+      dispatch(setSecretWord(res.data));
+    });
 };
