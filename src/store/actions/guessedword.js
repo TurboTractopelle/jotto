@@ -1,3 +1,3 @@
-export const guessWord = guessedWord => {
+export const guessedWord = guessedWord => {
   return (dispatch, getState) => {};
 };
