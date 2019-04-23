@@ -30,8 +30,13 @@ describe("render", () => {
   });
 
   describe("word has been guessed", () => {
-    it("doesnt render", () => {});
+    let wrapper;
+    beforeEach(() => (wrapper = setup({ successreducer: true })));
+    it("renders", () => {
+      expect(findByProp(wrapper, "component-input")).toBeTruthy();
+    });
+    it("doesnt render the form", () => {
+      expect(findByProp(wrapper, "form").length).toBe(0);
+    });
   });
-  it("doesnt render input button", () => {});
-  it("doesnt render submit button", () => {});
 });
