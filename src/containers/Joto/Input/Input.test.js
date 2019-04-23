@@ -10,18 +10,23 @@ describe("render", () => {
 
   const setup = (initialState = {}) => {
     const store = storeFactory(initialState);
-    const wrapper = shallow(<Input store={store} />)
+    return shallow(<Input store={store} />)
       .dive()
       .dive();
-    console.log(wrapper.debug());
   };
 
-  setup();
-
   describe("word has not been guessed", () => {
-    it("renders", () => {});
-    it("renders input button", () => {});
-    it("renders submit button", () => {});
+    let wrapper;
+    beforeEach(() => (wrapper = setup({ successreducer: false })));
+    it("renders", () => {
+      expect(findByProp(wrapper, "component-input")).toBeTruthy();
+    });
+    it("renders input button", () => {
+      expect(findByProp(wrapper, "input")).toBeTruthy();
+    });
+    it("renders submit button", () => {
+      expect(findByProp(wrapper, "button")).toBeTruthy();
+    });
   });
 
   describe("word has been guessed", () => {
