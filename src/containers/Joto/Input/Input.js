@@ -41,7 +41,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    guessedWord: word => dispatch(actions.guessedWord(word))
+    guessedWord: word => dispatch(actions.guessWordStart(word))
   };
 };
 

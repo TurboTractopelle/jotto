@@ -1,7 +1,7 @@
 import { storeFactory } from "./testUtils";
-import { guessedWord } from "../store/actions/actions";
+import { guessWordStart } from "../store/actions/actions";
 
-describe("guessedWord action dispatch", () => {
+describe("guessWordStart action dispatch", () => {
   const secretWordReducer = "party";
   const unsuccessfull = "train";
   describe("no guessed words", () => {
@@ -9,7 +9,7 @@ describe("guessedWord action dispatch", () => {
     let initialState = { secretWordReducer };
     beforeEach(() => (store = storeFactory(initialState)));
     it("updates the state for unsuccessful guess", () => {
-      store.dispatch(guessedWord(unsuccessfull));
+      store.dispatch(guessWordStart(unsuccessfull));
       const expectedState = {
         ...initialState,
         successreducer: false,
@@ -20,7 +20,7 @@ describe("guessedWord action dispatch", () => {
       expect(store.getState()).toEqual(expectedState);
     });
     it("updates the state for successful guess", () => {
-      store.dispatch(guessedWord(secretWordReducer));
+      store.dispatch(guessWordStart(secretWordReducer));
       const expectedState = {
         ...initialState,
         successreducer: true,
@@ -37,7 +37,7 @@ describe("guessedWord action dispatch", () => {
     const initialState = { guessedWordReducer, secretWordReducer };
     beforeEach(() => (store = storeFactory(initialState)));
     it("updates the state for unsuccessful guess", () => {
-      store.dispatch(guessedWord(unsuccessfull));
+      store.dispatch(guessWordStart(unsuccessfull));
       const expectedState = {
         ...initialState,
         successreducer: false,
@@ -49,7 +49,7 @@ describe("guessedWord action dispatch", () => {
       expect(store.getState()).toEqual(expectedState);
     });
     it("updates the state for successful guess", () => {
-      store.dispatch(guessedWord(secretWordReducer));
+      store.dispatch(guessWordStart(secretWordReducer));
       const expectedState = {
         ...initialState,
         successreducer: true,

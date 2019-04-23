@@ -1,2 +1,3 @@
 export const CORRECT_GUESS = "CORRECT_GUESS";
-export const GUESS_WORD = "GUESS_WORD";
+export const GUESS_WORD_START = "GUESS_WORD_START";
+export const GUESS_WORD_TEST = "GUESS_WORD_TEST";

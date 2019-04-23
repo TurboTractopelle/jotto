@@ -1,2 +1,2 @@
 export { success } from "./success";
-export { guessedWord } from "./guessedword";
+export { guessWordStart, guessWordTest } from "./guessedword";
