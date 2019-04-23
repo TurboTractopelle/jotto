@@ -4,10 +4,6 @@ import { shallow } from "enzyme";
 import { findByProp, storeFactory } from "../../../test/testUtils";
 
 describe("render", () => {
-  /*const defaultProps = [];
-  const setupProps = props => ({ ...defaultProps, ...props });
-  const setup = props => shallow(<Input {...setupProps(props)} />);*/
-
   const setup = (initialState = {}) => {
     const store = storeFactory(initialState);
     return shallow(<Input store={store} />)
